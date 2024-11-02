@@ -1,5 +1,7 @@
 #include "mbed.h"
 #include "TrafficLight.h"
+#include <iostream>
+using namespace std;
 
 TrafficLight lights;
 DigitalIn sw(USER_BUTTON);
@@ -18,6 +20,12 @@ int main()
 
         //Debounce switch
         wait_us(300000);
+
+        //lights.stop();
+
+        lights.SetFlashSpeed(100ms);
+
+        lights.GetFlashSpeed();
 
         //Wait for switch release
         while (sw==1);

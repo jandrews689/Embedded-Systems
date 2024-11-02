@@ -1,0 +1,5 @@
+load STM32F429ZITx
+project name STM32CubeMX
+project toolchain "MDK-ARM V5"
+project path "C:\Users\jandr\GitHub\Uni 2024\Embedded-Systems\Tasks\A Project\STM32CubeMX\Target_1"
+SetCopyLibrary "copy only"

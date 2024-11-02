@@ -19,6 +19,7 @@ class TrafficLight
     DigitalOut greenLED;
     Ticker t;
     LIGHT_STATE State;
+    std::chrono::microseconds TickerTime;
 
     void yellowFlashISR();
     void flashYellow(bool flash);
@@ -33,6 +34,15 @@ class TrafficLight
 
     //Advance the traffic lights to the next state
     LIGHT_STATE nextState();
+
+    //Stops the sigal and resets the lights to red.
+    void stop();
+
+    //Sets the speed of the flasher. 
+    void SetFlashSpeed(std::chrono::microseconds FlashTime);
+
+    //Gets the speed of the flasher. 
+    void GetFlashSpeed();
 
 };
 

@@ -1,0 +1,11 @@
+Dependencies for Project 'project test', Target 'Target_1': (DO NOT MODIFY !)
+CompilerVersion: 6220000::V6.22::ARMCLANG
+F (..\Task-360A-Polling\main.cpp)(0x66F68A11)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_Target_1-IC:/Users/jandr/AppData/Local/arm/packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-D__UVISION_VERSION="541" -DSTM32F429xx -D_RTE_-o ./objects/main.o -MMD)
+F (..\Task-360A-Polling\.gitignore)(0x66F68A11)()
+F (..\Task-360A-Polling\.mbed)(0x6724C723)()
+F (..\Task-360A-Polling\libuopmsb.lib)(0x66F68A11)()
+F (..\Task-360A-Polling\mbed_app.json)(0x66F68A11)()
+F (..\Task-360A-Polling\mbed-os.lib)(0x66F68A11)()
+F (..\Task-360A-Polling\README.md)(0x66F68A11)()
+F (..\Task-360A-Polling\SWPoll.hpp)(0x66F68A11)()
+F (..\HelloWorld\mbed-os\mbed.h)(0x66F6C25C)()

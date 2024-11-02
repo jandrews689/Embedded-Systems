@@ -24,7 +24,7 @@ int main()
         if (hasIncreasedBy(fPot, 0.1f)) {
             led1 = 1;
         }
-        else if (hasDecreasedBy<float>(fPot, 0.1f)) {
+        else if (hasDecreasedBy<>(fPot, 0.1f)) {
             led1 = 0;
         }
 

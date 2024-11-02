@@ -1,0 +1,78 @@
+    .data                   ; Section for initialized data
+stack:                      ; Define a stack array
+    .space  16             ; Reserve 16 bytes for stack (4 elements of 32 bits each)
+top:                       ; Define a variable to keep track of the stack pointer
+    .word   0              ; Initialize stack pointer to 0 (indicating empty stack)
+
+    .text                   ; Section for code
+    .global _start         ; Entry point of the program
+
+_start:
+    LDR R0, =stack         ; Load address of stack into R0
+    LDR R1, =top           ; Load address of top variable into R1
+
+    ; Push operation
+                ; Value to push onto stack
+                     ; Call push function
+
+                ; Another value to push
+                    ; Call push function
+
+    ; Display top of stack
+    BL display_top          ; Call function to display the top value
+
+    ; Pop operation
+    BL pop                  ; Call pop function
+
+    BL display_top          ; Call function to display the new top value
+
+    ; Exit program
+    BX lr                   ; Return from the program
+
+; Function to push value onto the stack
+push:
+               ; Load current top value from memory into R3
+                 ; Check if stack is full (4 elements)
+             ; If full, branch to stack_full
+
+    			; Store value in stack at R3 * 4 (byte offset)
+             ; Increment stack pointer
+               ; Update top value in memory
+                      ; Return from the function
+
+stack_full:
+    ; Handle stack full case (e.g., display error)
+    MOV R0, #1             ; Load error code
+    BX lr                  ; Return from the function
+
+; Function to pop value from the stack
+pop:
+    LDR R3, [R1]           ; 
+    CMP R3, #0             ; 
+    BEQ stack_empty        ; 
+
+    SUB R3, R3, #1         ; 
+    LDR R2, [R0, R3, LSL #2] ; 
+    STR R3, [R1]           ; 
+    BX lr                  ; 
+
+stack_empty:
+    ; Handle stack empty case (e.g., display error)
+    MOV R0, #2             ; Load error code
+    BX lr                  ; Return from the function
+
+; Function to display the top value of the stack
+display_top:
+               ; Load current top value from memory into R3
+                 ; Check if stack is empty
+    ; If empty, branch to stack_empty_display
+
+    LDR R2, [R0, R3, LSL #2] ; 
+    ; Add code to display the value in R2 (e.g., send to UART)
+    BX lr                  ; 
+
+stack_empty_display:
+    ; Handle stack empty case for display (e.g., display error)
+    MOV R0, #3             ; Load error code
+    BX lr                  ; Return from the function
+ 

@@ -30,8 +30,25 @@ void TrafficLight::flashYellow(bool flash) {
     t.detach(); //Turn off ticker
     if (flash) {
         //Turn on ticker ..... Hmmm, interrupts!
-        t.attach(callback(this, &TrafficLight::yellowFlashISR), 200ms);
+        t.attach(callback(this, &TrafficLight::yellowFlashISR), TickerTime);
     }
+}
+
+// Stop function, sets the lED to stop 
+void TrafficLight::stop() {
+    State = STOP;
+    updateOutput();
+}
+
+//Sets the FlashTime 
+void TrafficLight::SetFlashSpeed(std::chrono::microseconds FlashTime) {
+    TrafficLight::TickerTime = FlashTime;
+}
+
+//Gets the FlashTime
+void TrafficLight::GetFlashSpeed(){
+    
+    printf("The flash time is %lld\n", TickerTime);
 }
 
 // Moore Machine - update outputs
